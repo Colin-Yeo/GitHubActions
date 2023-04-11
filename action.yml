@@ -2,6 +2,7 @@ name: 'Hello World Action'
 description: 'Print out the text Hello, World'
 runs:
   using: "composite"
+  shell: bash
   steps:
     - run: echo "Hello, World!"
-      shell: bash
+      
