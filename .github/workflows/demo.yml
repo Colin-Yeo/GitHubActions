@@ -1,11 +1,7 @@
-name: Hello World Action
+name: 'Hello World Action'
+description: 'Print out the text Hello, World'
 
-on: [push]
-
-jobs:
-  build:
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Hello World
-        run: echo "Hello, World!"
+runs:
+  using: "composite"
+  steps:
+    - run: echo "Hello, World!"
