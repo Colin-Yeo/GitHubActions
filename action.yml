@@ -1,9 +1,13 @@
 name: "Hello World Action"
-description: "Print out the text Hello, World"
+description: "Print out {REPO} says HelloWorld"
+inputs:
+  repo: 
+    required: true
 runs:
   using: "composite"
   steps:
-    - uses: actions/checkout@v2
     - name: Hello World
       shell: bash
-      run: echo "Hello, World!"
+      env:
+        INPUT_REPO: ${{inputs.repo}}
+      run: echo "$INPUT_REPO say HelloWorld!"
